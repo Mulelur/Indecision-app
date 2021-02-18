@@ -4,7 +4,8 @@
 
 var app = {
   title: "Indecision App",
-  subtitle: "This is some info"
+  subtitle: "This is some info",
+  options: ["one", "two"]
 };
 
 var template = React.createElement(
@@ -19,6 +20,11 @@ var template = React.createElement(
     "p",
     null,
     app.subtitle
+  ),
+  React.createElement(
+    "p",
+    null,
+    app.options.length > 0 ? "here are your options" : "No options"
   ),
   React.createElement(
     "ol",

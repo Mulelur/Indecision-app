@@ -3,12 +3,14 @@
 const app = {
   title: "Indecision App",
   subtitle: "This is some info",
+  options: ["one", "two"],
 };
 
 const template = (
   <div>
     <h1>{app.title}</h1>
     <p>{app.subtitle}</p>
+    <p>{app.options.length > 0 ? "here are your options" : "No options"}</p>
     <ol>
       <li>Item one</li>
       <li>Item two</li>

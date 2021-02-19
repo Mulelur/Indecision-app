@@ -36,6 +36,7 @@ class Options extends React.Component {
     return (
       <div>
         <p>Options component here</p>
+        <Option />
       </div>
     );
   }

@@ -112,7 +112,8 @@ var Options = function (_React$Component4) {
           "p",
           null,
           "Options component here"
-        )
+        ),
+        React.createElement(Option, null)
       );
     }
   }]);

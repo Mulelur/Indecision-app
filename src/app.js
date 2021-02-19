@@ -1,29 +1,60 @@
-// console.log("it works!!");
+class IndecisionApp extends React.Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <Action />
+        <Options />
+        <AddOptions />
+      </div>
+    );
+  }
+}
 
-const app = {
-  title: "Indecision App",
-  subtitle: "This is some info",
-  options: ["one", "two"],
-};
+class Header extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Indecision</h1>
+        <h2>Put your life on the hands of a computer</h2>
+      </div>
+    );
+  }
+}
 
-const template = (
-  <div>
-    <h1>{app.title}</h1>
-    <p>{app.subtitle}</p>
-    <p>{app.options.length > 0 ? "here are your options" : "No options"}</p>
-    <ol>
-      <li>Item one</li>
-      <li>Item two</li>
-    </ol>
-  </div>
-);
-// const template2 = (
-//   <div>
-//     <h1>Rotonda Mulelu</h1>
-//     <p>Age: 20</p>
-//     <p>Location: Thohoyandou</p>
-//   </div>
-// );
-const appRoot = document.getElementById("app");
+class Action extends React.Component {
+  render() {
+    return (
+      <div>
+        <button>What shuld i do?</button>
+      </div>
+    );
+  }
+}
+class Options extends React.Component {
+  render() {
+    return (
+      <div>
+        <p>Options component here</p>
+      </div>
+    );
+  }
+}
 
-ReactDOM.render(template, appRoot);
+class Option extends React.Component {
+  render() {
+    return <div>Option component here</div>;
+  }
+}
+
+class AddOptions extends React.Component {
+  render() {
+    return (
+      <div>
+        <p>AddOptions component here</p>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<IndecisionApp />, document.getElementById("app"));

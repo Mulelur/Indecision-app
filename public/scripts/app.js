@@ -20,12 +20,15 @@ var IndecisionApp = function (_React$Component) {
   _createClass(IndecisionApp, [{
     key: "render",
     value: function render() {
+      var title = "Incdecision";
+      var subTitle = "Put your life on the hands of a computer";
+      var options = ["thing one ", "thing tow"];
       return React.createElement(
         "div",
         null,
-        React.createElement(Header, null),
+        React.createElement(Header, { title: title, subTitle: subTitle }),
         React.createElement(Action, null),
-        React.createElement(Options, null),
+        React.createElement(Options, { options: options }),
         React.createElement(AddOptions, null)
       );
     }
@@ -46,18 +49,19 @@ var Header = function (_React$Component2) {
   _createClass(Header, [{
     key: "render",
     value: function render() {
+      this.props;
       return React.createElement(
         "div",
         null,
         React.createElement(
           "h1",
           null,
-          "Indecision"
+          this.props.title
         ),
         React.createElement(
           "h2",
           null,
-          "Put your life on the hands of a computer"
+          this.props.subTitle
         )
       );
     }
@@ -105,15 +109,18 @@ var Options = function (_React$Component4) {
   _createClass(Options, [{
     key: "render",
     value: function render() {
+      var options = this.props.options;
       return React.createElement(
         "div",
         null,
         React.createElement(
           "p",
           null,
-          "Options component here"
+          options.length
         ),
-        React.createElement(Option, null)
+        options.map(function (item, index) {
+          return React.createElement(Option, { key: index, item: item });
+        })
       );
     }
   }]);
@@ -134,9 +141,9 @@ var Option = function (_React$Component5) {
     key: "render",
     value: function render() {
       return React.createElement(
-        "div",
+        "p",
         null,
-        "Option component here"
+        this.props.item
       );
     }
   }]);
